@@ -2,6 +2,48 @@
 
 This is a microservices-based library management system consisting of multiple services for handling books, loans, and availability status.
 
+## Project Structure
+```
+library-app/
+├── api-gateway/
+│   ├── server.js
+│   └── package.json
+├── livre-service/                 # Book Service
+│   ├── controllers/
+│   │   └── livreController.js
+│   ├── models/
+│   │   └── Livre.js
+│   ├── routes/
+│   │   └── livreRoutes.js
+│   ├── rabbitmq_producer.js
+│   ├── server.js
+│   └── package.json
+├── emprunt-service/               # Loan Service
+│   ├── controllers/
+│   │   └── empruntController.js
+│   ├── models/
+│   │   └── Emprunt.js
+│   ├── routes/
+│   │   └── empruntRoutes.js
+│   ├── rabbitmq_consumer.js
+│   ├── rabbitmq_producer.js
+│   ├── server.js
+│   └── package.json
+├── disponibilite-service/         # Availability Service
+│   ├── controllers/
+│   │   └── disponibiliteController.js
+│   ├── models/
+│   │   └── Disponibilite.js
+│   ├── routes/
+│   │   └── disponibiliteRoutes.js
+│   ├── rabbitmq_consumer.js
+│   ├── server.js
+│   └── package.json
+└── common/
+    ├── authMiddleware.js
+    └── rabbitmq_setup.js
+```
+
 ## Prerequisites
 
 - Node.js
